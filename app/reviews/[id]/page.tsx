@@ -5,7 +5,13 @@ import Link from "next/link"
 import { colors } from "../../../styles/colors"
 import { mockReviews } from "../../../lib/mockData"
 
-export default async function Page({ params }: { params: { id: string } }): Promise<JSX.Element> {
+type PageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function Page({ params }: PageProps): Promise<JSX.Element> {
   // モックデータから該当するレビューを取得
   const review = mockReviews.find((r) => r.id === Number(params.id))
 
