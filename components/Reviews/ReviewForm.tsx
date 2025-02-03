@@ -1,14 +1,29 @@
 import { useState } from "react"
 import { mockReviews } from "../../lib/mockData"
 
+type Review = {
+  id: number;
+  leadership: number;
+  communication: number;
+  fairness: number;
+  employee_development: number;
+  decision_making: number;
+  team_building: number;
+  emotional_management: number;
+  positives: string;
+  improvements: string;
+  specific_episodes: string;
+  created_at: string;
+};
+
 export function ReviewForm() {
   const [leadership, setLeadership] = useState(0)
-  const [communication, setCommunication] = useState(0)
-  const [fairness, setFairness] = useState(0)
-  const [employeeDevelopment, setEmployeeDevelopment] = useState(0)
-  const [decisionMaking, setDecisionMaking] = useState(0)
-  const [teamBuilding, setTeamBuilding] = useState(0)
-  const [emotionalManagement, setEmotionalManagement] = useState(0)
+  const [communication] = useState(0)
+  const [fairness] = useState(0)
+  const [employeeDevelopment] = useState(0)
+  const [decisionMaking] = useState(0)
+  const [teamBuilding] = useState(0)
+  const [emotionalManagement] = useState(0)
   const [positives, setPositives] = useState("")
   const [improvements, setImprovements] = useState("")
   const [specificEpisodes, setSpecificEpisodes] = useState("")
@@ -19,6 +34,7 @@ export function ReviewForm() {
       // Simulate adding a new review
       const newReview = {
         id: mockReviews.length + 1,
+        companyName: "Unknown",
         leadership,
         communication,
         fairness,
@@ -31,7 +47,7 @@ export function ReviewForm() {
         specific_episodes: specificEpisodes,
         created_at: new Date().toISOString(),
       }
-      mockReviews.push(newReview as any)
+      mockReviews.push(newReview)
       console.log("Review submitted successfully:", newReview)
       // Reset form or show success message
     } catch (error) {
