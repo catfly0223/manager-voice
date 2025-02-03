@@ -11,7 +11,7 @@ type PageProps = Promise<{
 
 export default async function Page({ params }: { params: PageProps }): Promise<JSX.Element> {
   // Promise を await してから id を利用
-  const { id } = await params;
+  const { params: { id } } = await params;
   // モックデータから該当するレビューを取得
   const review = mockReviews.find((r) => r.id === Number(id))
 

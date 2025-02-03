@@ -7,7 +7,7 @@ import { mockReviews } from "../../lib/mockData"
 
 export default function CompanySearch() {
   const searchParams = useSearchParams()
-  const query = searchParams.get("q")?.toLowerCase() || ""
+  const query = searchParams?.get("q")?.toLowerCase() || ""
 
   // 会社名でグループ化し、レビュー数をカウント
   const companies = mockReviews.reduce(
