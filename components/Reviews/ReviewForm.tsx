@@ -3,6 +3,7 @@ import { mockReviews } from "../../lib/mockData"
 
 type Review = {
   id: number;
+  companyName: string;
   leadership: number;
   communication: number;
   fairness: number;
@@ -32,7 +33,7 @@ export function ReviewForm() {
     e.preventDefault()
     try {
       // Simulate adding a new review
-      const newReview = {
+      const newReview: Review = {
         id: mockReviews.length + 1,
         companyName: "Unknown",
         leadership,
