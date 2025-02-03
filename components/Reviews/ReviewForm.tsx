@@ -31,7 +31,7 @@ export function ReviewForm() {
         specific_episodes: specificEpisodes,
         created_at: new Date().toISOString(),
       }
-      mockReviews.push(newReview)
+      mockReviews.push(newReview as any)
       console.log("Review submitted successfully:", newReview)
       // Reset form or show success message
     } catch (error) {
