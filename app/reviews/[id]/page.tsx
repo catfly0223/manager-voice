@@ -5,7 +5,7 @@ import Link from "next/link"
 import { colors } from "../../../styles/colors"
 import { mockReviews } from "../../../lib/mockData"
 
-export default function ReviewDetail({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: { id: string } }) {
   // モックデータから該当するレビューを取得
   const review = mockReviews.find((r) => r.id === Number(params.id))
 
