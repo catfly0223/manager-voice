@@ -12,7 +12,7 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
-  CommandList,
+  CommandList
 } from "@/components/ui/command"
 
 // Mock data for demonstration purposes.  Replace with your actual data fetching mechanism.
@@ -81,7 +81,7 @@ export function Header() {
         </div>
       </div>
       <CommandDialog open={searchOpen} onOpenChange={setSearchOpen}>
-        <Command>
+        <Command className="rounded-lg border shadow-md">
           <CommandInput placeholder="会社名で検索..." />
           <CommandList>
             <CommandEmpty>結果が見つかりません</CommandEmpty>
