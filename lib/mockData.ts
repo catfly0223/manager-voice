@@ -46,3 +46,10 @@ export const mockReviews = [
   },
 ]
 
+export const mockUser = {
+  id: "1",
+  username: "demo_user",
+  email: "demo@example.com",
+  // 他のフィールドがあれば追記
+};
+
