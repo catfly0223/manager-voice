@@ -3,15 +3,17 @@ import Link from "next/link"
 import { colors } from "../../../styles/colors"
 import { mockReviews } from "../../../lib/mockData"
 
-type PageProps = {
+type PageProps = Promise<{
   params: {
     id: string;
   };
-};
+}>;
 
-export default async function Page({ params }: PageProps): Promise<JSX.Element> {
+export default async function Page({ params }: { params: PageProps }): Promise<JSX.Element> {
+  // Promise を await してから id を利用
+  const { id } = await params;
   // モックデータから該当するレビューを取得
-  const review = mockReviews.find((r) => r.id === Number(params.id))
+  const review = mockReviews.find((r) => r.id === Number(id))
 
   if (!review) {
     return <div>レビューが見つかりませんでした</div>
